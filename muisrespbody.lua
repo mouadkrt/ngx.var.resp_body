@@ -5,7 +5,7 @@ local mt = { __index = _M }
 
 
 function _M.new(config)
-  logfile_name = config.logfile_name
+  logfile_fullPath = config.logfile_fullPath
 return setmetatable({}, mt)
 end
 
@@ -43,7 +43,7 @@ function _M:body_filter()
 	  ngx.var.resp_body = ngx.ctx.buffered
 	end
 	
-	file = io.open("/tmp/" .. logfile_name .. ".out", "a")
+	file = io.open(logfile_fullPath, "a")
 	io.output(file)
 	io.write(resp_body)
 	io.close(file)

@@ -7,8 +7,8 @@
   "configuration": {
     "type": "object",
     "properties": {
-      "logfile_name": {
-        "description": "Logfile name. Eg name of the WS itself, so that each WS logs in a seperate file",
+      "logfile_fullPath": {
+        "description": "Full path Logfile with extension. Eg /tmp/myWS1_respBody.log or /ODF/path/myWS2_respBody.log",
         "type": "string"
       }
 	}
