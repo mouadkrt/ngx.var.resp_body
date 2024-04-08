@@ -1,1 +1,1 @@
-return require('muis_resp_body')
+return require('muisrespbody')
