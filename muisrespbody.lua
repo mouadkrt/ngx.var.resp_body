@@ -37,7 +37,7 @@ function _M:body_filter()
 	  ngx.var.resp_body = ngx.ctx.buffered
 	end
 	
-	file = io.open("/tmp/resp_body.out", "a")
+	file = io.open("/tmp/muisrespbody.out", "a")
 	io.output(file)
 	io.write(resp_body)
 	io.close(file)

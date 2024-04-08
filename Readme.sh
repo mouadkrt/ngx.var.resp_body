@@ -1,10 +1,10 @@
-oc delete secret muis-resp-body
-oc create secret generic muis-resp-body   --from-file=./apicast-policy.json   --from-file=./init.lua   --from-file=./muis_resp_body.lua
+oc delete secret muisrespbody
+oc create secret generic muisrespbody   --from-file=./apicast-policy.json   --from-file=./init.lua   --from-file=./muisrespbody.lua
 
 #add the following properties in the APIManager yaml definition at the spec.apicast.stagingSpec.customPolicies
-#        - name: muis_resp_body
+#        - name: muisrespbody
 #          secretRef:
-#            name: muis_resp_body
+#            name: muisrespbody
 #          version: '0.1'
 
 oc rollout latest dc/apicast-staging
