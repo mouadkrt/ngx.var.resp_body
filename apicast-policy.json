@@ -7,7 +7,10 @@
   "configuration": {
     "type": "object",
     "properties": {
-		
+      "logfile_name": {
+        "description": "Logfile name. Eg name of the WS itself, so that each WS logs in a seperate file",
+        "type": "string"
+      }
 	}
   }
 }

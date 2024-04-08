@@ -3,6 +3,12 @@ local setmetatable = setmetatable
 local _M = require('apicast.policy').new('muisrespbody', '0.1')
 local mt = { __index = _M }
 
+
+function _M.new(config)
+  logfile_name = config.logfile_name
+return setmetatable({}, mt)
+end
+
 function _M:init()
   -- do work when nginx master process starts
 end
@@ -37,12 +43,10 @@ function _M:body_filter()
 	  ngx.var.resp_body = ngx.ctx.buffered
 	end
 	
-	file = io.open("/tmp/muisrespbody.out", "a")
+	file = io.open("/tmp/" .. logfile_name .. ".out", "a")
 	io.output(file)
 	io.write(resp_body)
 	io.close(file)
-
-	
 end
 
 function _M:log()
