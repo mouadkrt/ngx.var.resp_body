@@ -37,15 +37,26 @@ function _M:body_filter()
   -- can read and change response body
   -- https://github.com/openresty/lua-nginx-module/blob/master/README.markdown#body_filter_by_lua
   
-   local resp_body = ngx.arg[1]
-	ngx.ctx.buffered = (ngx.ctx.buffered or "") .. resp_body
-	if ngx.arg[2] then
-	  ngx.var.resp_body = ngx.ctx.buffered
-	end
+  -- Get RESPONSE BODY :
+    local resp_body = ngx.arg[1]
+    ngx.ctx.buffered = (ngx.ctx.buffered or "") .. resp_body
+    if ngx.arg[2] then
+      ngx.var.resp_body = ngx.ctx.buffered
+    end
 	
+  -- Get RESONSE HEADERS :
+    local req_headers = "Headers: (";
+    local h, err = ngx.req.get_headers()
+    for k, v in pairs(h) do
+        req_headers = req_headers .. "[" .. k .. ": " .. v .. "] ";
+    end
+  req_headers = req_headers .. ")";
+
+    ngx.var.req_headers = req_headers;
+
 	file = io.open(logfile_fullPath, "a")
 	io.output(file)
-	io.write(resp_body)
+	io.write("\nRESPONSE HEADERS :\n" .. req_headers .. "RESPONSE BODY :\n" .. resp_body)
 	io.close(file)
 end
 
