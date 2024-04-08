@@ -46,12 +46,11 @@ function _M:body_filter()
 	
   -- Get RESONSE HEADERS :
     local resp_headers = "";
-    local h, err = ngx.resp.get_headers()
-    for k, v in pairs(h) do
-        resp_headers = resp_headers .. "[" .. k .. ": " .. v .. "] ";
-    end
-
-    ngx.var.resp_headers = resp_headers;
+  -- local h, err = ngx.resp.get_headers()
+  --  for k, v in pairs(h) do
+  --      resp_headers = resp_headers .. "[" .. k .. ": " .. v .. "] ";
+  --  end
+  --  ngx.var.resp_headers = resp_headers;
 
   ngx.log(ngx.INFO, "muis testing ngx.log")
 	file = io.open(logfile_fullPath, "a")
