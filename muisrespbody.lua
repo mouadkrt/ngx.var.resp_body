@@ -52,7 +52,7 @@ function _M:body_filter()
   --  end
   --  ngx.var.resp_headers = resp_headers;
 
-  ngx.log(ngx.INFO, "muis2 testing ngx.log, request_uri:" .. $request_uri .. ", server_name:" .. $server_name) -- Will get logged to $APICAST_LOG_FILE deployment env var
+  ngx.log(ngx.INFO, "muis testing ngx.log " .. ngx.var.request_uri) -- Will get logged to $APICAST_LOG_FILE deployment env var
 	file = io.open(logfile_fullPath, "a")
 	io.output(file)
 	io.write("\nRESPONSE HEADERS :\n" .. resp_headers .. "RESPONSE BODY :\n" .. resp_body)
