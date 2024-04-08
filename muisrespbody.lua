@@ -1,6 +1,6 @@
 local setmetatable = setmetatable
 
-local _M = require('apicast.policy').new('wsse', '0.1')
+local _M = require('apicast.policy').new('muisrespbody', '0.1')
 local mt = { __index = _M }
 
 function _M:init()
