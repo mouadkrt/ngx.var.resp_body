@@ -1,6 +1,6 @@
 local setmetatable = setmetatable
 
-local _M = require('apicast.policy').new('muis_log_payload', '0.1')
+local _M = require('apicast.policy').new('muislogpayload', '0.1')
 local mt = { __index = _M }
 
 
