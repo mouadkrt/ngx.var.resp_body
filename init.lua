@@ -1,1 +1,1 @@
-return require('muis_log_payload')
+return require('muislogpayload')

@@ -1,10 +1,10 @@
-oc delete secret muis_log_payload
-oc create secret generic muis_log_payload   --from-file=./apicast-policy.json   --from-file=./init.lua   --from-file=./muis_log_payload.lua
+oc delete secret muislogpayload
+oc create secret generic muislogpayload   --from-file=./apicast-policy.json   --from-file=./init.lua   --from-file=./muislogpayload.lua
 
 #add the following properties in the APIManager yaml definition at the spec.apicast.stagingSpec.customPolicies
-#        - name: muis_log_payload
+#        - name: muislogpayload
 #          secretRef:
-#            name: muis_log_payload
+#            name: muislogpayload
 #          version: '0.1'
 
 oc rollout latest dc/apicast-staging
