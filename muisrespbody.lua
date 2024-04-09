@@ -4,11 +4,6 @@ local _M = require('apicast.policy').new('muisrespbody', '0.1')
 local mt = { __index = _M }
 
 
-function _M.new(config)
-  logfile_fullPath = config.logfile_fullPath
-return setmetatable({}, mt)
-end
-
 function _M:init()
   -- do work when nginx master process starts
 end

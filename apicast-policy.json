@@ -7,10 +7,6 @@
   "configuration": {
     "type": "object",
     "properties": {
-      "logfile_fullPath": {
-        "description": "Full path Logfile with extension. Eg /tmp/myWS1_respBody.log or /ODF/path/myWS2_respBody.log",
-        "type": "string"
-      }
 	}
   }
 }
