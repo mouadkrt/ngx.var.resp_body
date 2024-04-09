@@ -45,18 +45,15 @@ function _M:body_filter()
     end
 	
   -- Get RESONSE HEADERS :
-    local resp_headers = "";
+  -- local resp_headers = "";
   -- local h, err = ngx.resp.get_headers()
   --  for k, v in pairs(h) do
   --      resp_headers = resp_headers .. "[" .. k .. ": " .. v .. "] ";
   --  end
   --  ngx.var.resp_headers = resp_headers;
 
-  ngx.log(ngx.INFO, "muis testing ngx.log " .. ngx.var.request_uri) -- Will get logged to $APICAST_LOG_FILE deployment env var
-	file = io.open(logfile_fullPath, "a")
-	io.output(file)
-	io.write("\nRESPONSE HEADERS :\n" .. resp_headers .. "RESPONSE BODY :\n" .. resp_body)
-	io.close(file)
+   ngx.log(ngx.INFO, "RESPONSE BODY :\n" .. resp_body) -- Will get logged to $APICAST_LOG_FILE deployment env var
+	
 end
 
 function _M:log()
