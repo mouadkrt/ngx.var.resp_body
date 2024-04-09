@@ -47,7 +47,7 @@ function _M:body_filter()
   --  end
   --  ngx.var.resp_headers = resp_headers;
 
-   ngx.log(ngx.INFO, "RESPONSE BODY :\n" .. resp_body) -- Will get logged to $APICAST_LOG_FILE deployment env var
+   ngx.log(ngx.INFO, "RESPONSE BODY : " .. resp_body) -- Will get logged to $APICAST_LOG_FILE deployment env var
 	
 end
 
