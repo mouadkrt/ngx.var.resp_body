@@ -1,8 +1,8 @@
 {
   "$schema": "http://apicast.io/policy-v1/schema#manifest#",
-  "name": "Log response body",
+  "name": "Log payloads",
   "summary": "",
-  "description": "Munisys custom policy for logging response body",
+  "description": "Munisys custom policy for logging request and response payloads",
   "version": "0.1",
   "configuration": {
     "type": "object",

@@ -1,6 +1,6 @@
 local setmetatable = setmetatable
 
-local _M = require('apicast.policy').new('muisrespbody', '0.1')
+local _M = require('apicast.policy').new('muis_log_payload', '0.1')
 local mt = { __index = _M }
 
 
@@ -26,6 +26,14 @@ end
 
 function _M:header_filter()
   -- can change response headers
+end
+
+function _M:rewrite()
+-- Load http body into memory
+  ngx.req.read_body()
+  body = ngx.req.get_body_data()
+
+  ngx.log(ngx.INFO, "Request Body : " .. body)
 end
 
 function _M:body_filter()

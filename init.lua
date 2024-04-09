@@ -1,1 +1,1 @@
-return require('muisrespbody')
+return require('muis_log_payload')
